@@ -1,14 +1,33 @@
-import Cell from './Cell.js';
-
 class Board {
     constructor(rows, columns){
     this.rows = 20;
     this.columns = 10;
-    this.grid = this.createEmptyGrid();
+    this.grid = [
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null],
+    ];
     }
 
-    createEmtpyGrid() {
-        return Array.from({length: this.rows}, () => Array(this.columns).fill(null));
+    createGrid() {
+        return this.grid;
     }
 
     isValidMove(piece, offsetX, offsetY) {
