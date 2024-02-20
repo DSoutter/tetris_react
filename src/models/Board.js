@@ -11,7 +11,7 @@ class Board {
         return Array.from({length: this.rows}, () => Array(this.columns).fill(null));
     }
 
-    ifValidMove(piece, offsetX, offsetY) {
+    isValidMove(piece, offsetX, offsetY) {
 
     }
 
