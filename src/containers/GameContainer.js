@@ -16,8 +16,8 @@ const GameContainer = () => {
      }
     return (
         <div id="game-container">
-            <button className="button" onClick={(event) => {console.log('Start')}}><span>Start Game?</span></button>
-            <button className="button"><span>High Scores</span></button>
+            <button className="button" onClick={(event) => {console.log('Start')}}><span>Start</span></button>
+ 
             <div onKeyDown={handleKeyDown} tabIndex="0">
                 Game Container
             </div>
