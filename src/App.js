@@ -5,11 +5,11 @@ import FooterComponent from './components/FooterComponent';
 import GameContainer from './containers/GameContainer';
 function App() {
   return (
-    <div className="Game">
-      <HeaderComponent/>
-      <GameContainer/>
-      <FooterComponent/>
-    </div>
+      <div className="Game">
+        <HeaderComponent/>
+        <GameContainer/>
+        <FooterComponent/>
+      </div>
   );
 }
 
