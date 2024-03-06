@@ -1,19 +1,28 @@
-import React, {useEffect, useState} from 'react';
-import HeaderComponent from '../components/HeaderComponent';
-import FooterComponent from '../components/FooterComponent';
+import React, {useEffect, useState, event} from 'react';
+import Board from '../models/Board';
 import '../styles/Game.css'
+import { randomTetromino } from '../models/Tetrominoes';
 const GameContainer = () => {
 
+    const [board, setBoard] = useState(null);
+
+    useEffect(() => {
+        const board = new Board()
+        board.createGrid()
+    })
+
+     const handleKeyDown = (event) => {
+         console.log(event.key + " key pressed in GameContainer");
+     }
     return (
         <div id="game-container">
-            <HeaderComponent/>
-            <button className="button" onClick={(event) => {console.log("Start")}}><span>Start Game?</span></button>
-            <br/>
+            <button className="button" onClick={(event) => {console.log('Start')}}><span>Start Game?</span></button>
             <button className="button"><span>High Scores</span></button>
-            <div>
+            <div onKeyDown={handleKeyDown} tabIndex="0">
                 Game Container
             </div>
-            <FooterComponent/>
+            
+             <div onKeyDown={handleKeyDown}></div>
         </div>
     )
 }
