@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HighScoresCompponent = () => {
+const HighScoresComponent = () => {
     return(
         <div>
             <h1>High Scores:</h1>
@@ -12,4 +12,4 @@ const HighScoresCompponent = () => {
         </div>
     )
 }
-export default HighScoresCompponent 
+export default HighScoresComponent;
