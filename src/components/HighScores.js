@@ -4,11 +4,11 @@ const HighScoresComponent = () => {
     return(
         <div>
             <h1>High Scores:</h1>
-            <li>
-                <ol>First</ol>
-                <ol>Second</ol>
-                <ol>Third</ol>
-            </li>
+            <ol>
+                <li>First</li>
+                <li>Second</li>
+                <li>Third</li>
+            </ol>
         </div>
     )
 }

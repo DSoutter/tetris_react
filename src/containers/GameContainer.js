@@ -1,4 +1,4 @@
-import React, {useEffect, useState, event} from 'react';
+import React, {useEffect, useState} from 'react';
 import Board from '../models/Board';
 import '../styles/Game.css'
 import { randomTetromino } from '../models/Tetrominoes';
