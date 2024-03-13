@@ -1,26 +1,32 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import App from '../App';
-import AboutComponent from './About';
+import {Link, useNavigate} from 'react-router-dom';
+import AboutComponent from './AboutComponent';
 import '../styles/HeaderAndFooter.css'
 
 const HeaderComponent = () => {
+    const navigate = useNavigate();
+
+    const navigateToAbout = () => {
+        navigate('/about');
+      };
+    const navigateToHighScores = () => {
+        navigate('/highscores');
+      };
+
     return(
-        <Router>
             <div>
             <nav classname="headfoot">
                 <Link to="/">Game</Link>
                 <h3>Tetris React App</h3>
-                <Link to="/highscores">High Scores</Link>
-                <Link to="/about">About</Link>
+                {/* <Link to="/highscores">High Scores</Link>
+                <Link to="/about">About</Link> */}
+                <button onClick={navigateToAbout}>About</button>
+                <button onClick={navigateToHighScores}>High Scores</button>
             </nav>  
             <hr/>
-            <Routes>
             {/* <Route path="/" exact component={App}/> */}
-            <Route path="/about" exact component={AboutComponent}/>
-            </Routes>
+            {/* <Route path="/about" exact component={AboutComponent}/> */}
             </div>
-        </Router>
     )   
 }
 export default HeaderComponent;
