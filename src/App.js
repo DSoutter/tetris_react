@@ -13,9 +13,9 @@ function App() {
       <div className="Game">
         <HeaderComponent/>
         <Routes>
-          <Route path="/" exact component={GameContainer}/>
-          <Route path="/about" element={<AboutComponent />} /> {AboutComponent}
-          <Route path="/highscores" element={<HighScoresComponent />} />{HighScoresComponent}/>
+          <Route path="/" element={<GameContainer/>}/>
+          <Route path="/about" element={<AboutComponent />}/>
+          <Route path="/highscores" element={<HighScoresComponent />}/>
         </Routes>
         <FooterComponent/>
       </div>
