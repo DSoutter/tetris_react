@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import Board from '../models/Board';
 import '../styles/Game.css'
 import { randomTetromino } from '../models/Tetrominoes';
+import Tetris from '../components/Tetris';
+
 const GameContainer = () => {
 
     const [board, setBoard] = useState(null);
@@ -16,15 +18,15 @@ const GameContainer = () => {
      }
     return (
         <div id="game-container">
-            <button className="button" onClick={(event) => {console.log('Start')}}><span>Start</span></button>
- 
+            <button className="button" onClick={(event) => {console.log('Start')}}>
+                <span>Start</span>
+            </button>
             <div onKeyDown={handleKeyDown} tabIndex="0">
                 Game Container
+                <Tetris/>
             </div>
-            
-             <div onKeyDown={handleKeyDown}></div>
         </div>
     )
 }
 
-export default GameContainer
+export default GameContainer;
