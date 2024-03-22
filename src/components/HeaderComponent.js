@@ -14,7 +14,7 @@ const HeaderComponent = () => {
 
     return(
             <div>
-            <nav classname="headfoot">
+            <nav className="headfoot">
                 <Link to="/">Game</Link>
                 <h3>Tetris React App</h3>
                 <button onClick={navigateToAbout}>About</button>
