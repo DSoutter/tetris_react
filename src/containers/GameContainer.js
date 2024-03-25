@@ -1,17 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import Board from '../models/Board';
+import {createStage} from '../models/gameHelper';
 import '../styles/Game.css'
 import { randomTetromino } from '../models/Tetrominoes';
-import Tetris from '../components/Tetris';
+import Stage from '../components/Stage';
+import Display from "../components/Display";
 
 const GameContainer = () => {
 
-    const [board, setBoard] = useState(null);
-
-    useEffect(() => {
-        const board = new Board()
-        board.createGrid()
-    })
 
      const handleKeyDown = (event) => {
          console.log(event.key + " key pressed in GameContainer");
@@ -23,8 +18,15 @@ const GameContainer = () => {
             </button>
             <div onKeyDown={handleKeyDown} tabIndex="0">
                 Game Container
-                <Tetris/>
+                <Stage stage={createStage()}/>
             </div>
+            <aside>
+                <div>
+                    <Display text="Score: "/>
+                    <Display text="Rows: "/>
+                    <Display text="Level: "/>
+                </div>
+            </aside>
         </div>
     )
 }
