@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import '../styles/HeaderAndFooter.css'
+import { StyledButton } from './styles/StyledButton';
+import StartButton from './StartButton';
+import { StyledBars } from './styles/StyledBars';
 
 const HeaderComponent = () => {
     const navigate = useNavigate();
@@ -11,17 +14,20 @@ const HeaderComponent = () => {
     const navigateToHighScores = () => {
         navigate('/highscores');
       };
+    
+    const navigateToGame = () => {
+      navigate('/');
+    }
 
     return(
-            <div>
-            <nav className="headfoot">
-                <Link to="/">Game</Link>
-                <h3>Tetris React App</h3>
-                <button onClick={navigateToAbout}>About</button>
-                <button onClick={navigateToHighScores}>High Scores</button>
-            </nav>  
-            <hr/>
-            </div>
+      <StyledBars>
+        <h2>Tetris React App</h2>
+        <div>
+          <StyledButton onClick={navigateToGame}>Game</StyledButton>
+          <StyledButton onClick={navigateToAbout}>About</StyledButton>
+          <StyledButton onClick={navigateToHighScores}>High Scores</StyledButton>
+        </div>
+      </StyledBars>  
     )   
 }
 export default HeaderComponent;

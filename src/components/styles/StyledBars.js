@@ -1,4 +1,6 @@
-.headfoot {
+import styled from 'styled-components';
+
+export const StyledBars = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,8 +8,4 @@
     color: #fff;
     padding: 0px 5px 0px 5px;
     text-align: center;
-}
-
-.link {
-    color: #fff;;
-}
+`;
