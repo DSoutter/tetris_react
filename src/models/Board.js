@@ -1,33 +1,29 @@
+import { randomTetromino } from "./Tetrominoes";
 class Board {
-    constructor(rows, columns){
+    constructor(){
     this.rows = 20;
     this.columns = 10;
-    this.grid = [
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null],
-    ];
+    this.grid = this.createGrid();
     }
 
     createGrid() {
+        const grid = [];
+        for (let row=0; row < this.rows; row++){
+            const newRow = [];
+            for (let col = 0; col < this.columns; col++) {
+                newRow.push(null);
+            }
+            grid.push(newRow);
+        }
+        return grid;
+    }
+
+    getGrid() {
         return this.grid;
+    }
+
+    addTetromino() {
+        console.log(randomTetromino());
     }
 
     isValidMove(piece, offsetX, offsetY) {
